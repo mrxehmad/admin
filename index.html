@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from shell.prinsh.com/Prinsley/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Aug 2023 07:54:17 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -160,7 +157,7 @@
 		</style>
 </head>
 <body>
-<div id="overlay" class="overlay">
+<!-- <div id="overlay" class="overlay">
 <div class="overlay-body">
 <br>
 <a href="admin.mp4"><img src="admin.jpg" width="100"></a>
@@ -176,43 +173,22 @@
 </div>
 <div class="scare">
 <video id="video" class="video" src="admin.mp4" loop></video>
-</div>
-<script type="text/javascript">
-            const video = document.getElementById("video");
-            const overlay = document.getElementById("overlay");
-            const declineButton = document.getElementById("decline-button");
-            const acceptButton = document.getElementById("accept-button");
-            const forgetButton = document.getElementById("forget-button");
-
-            let hasClicked;
-
-    		window.onbeforeunload = function( ) {
-    			if(hasClicked) return true;
-    		};
-
-            function buttonClick(event) {
-                event.preventDefault();
-                if(!hasClicked) hasClicked = true;
-                overlay.classList.add("hidden");
-                video.play();
-                videoClick();
-            }
-
-            function videoClick(event) {
-                if(event) event.preventDefault();
-                // if not fullscreen
-                const { documentElement } = document;
-    			if(documentElement.requestFullscreen) documentElement.requestFullscreen();
-    			else if(documentElement.mozRequestFullScreen) documentElement.mozRequestFullScreen();
-    			else if(documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
-    			else if(documentElement.msRequestFullscreen) full.msRequestFullscreen();
-            }
-
-            acceptButton.addEventListener("click", buttonClick);
-            declineButton.addEventListener("click", buttonClick);
-            forgetButton.addEventListener("click", buttonClick);
-            video.addEventListener("click", videoClick);
-		</script>
+</div> -->
+<script>
+    function videoClick(event) {
+        if(event) event.preventDefault();
+        // if not fullscreen
+        const { documentElement } = document;
+        if(documentElement.requestFullscreen) documentElement.requestFullscreen();
+        else if(documentElement.mozRequestFullScreen) documentElement.mozRequestFullScreen();
+        else if(documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
+        else if(documentElement.msRequestFullscreen) full.msRequestFullscreen();
+    }
+    
+    window.onload = function() {
+        videoClick();
+    };
+    </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"7feb79546c003d07","version":"2023.8.0","r":1,"b":1,"token":"af76a0f2ef2c4842bd3334f3c2936a9f","si":100}' crossorigin="anonymous"></script>
 </body>
 
